@@ -74,28 +74,28 @@ class Hanabi{
     if(this.tp == 0 && this.vy >=0){
        this.kill = true;  
       //火花内側入力colは発射した時設定
-			for(let i=0;i<200;i++)
-			{
-				let r=rand(0,360);
-				let s=rand(10,300);
-				let vx=Math.cos(r*Math.PI/180)*s;
-				let vy=Math.sin(r*Math.PI/180)*s;
-				hanabi.push(
-					new Hanabi( this.x,this.y,this.col,vx,vy,1,1,200) 
-				);
-			}
+	for(let i=0;i<200;i++)
+	{
+		let r=rand(0,360);
+		let s=rand(10,300);
+		let vx=Math.cos(r*Math.PI/180)*s;
+		let vy=Math.sin(r*Math.PI/180)*s;
+		hanabi.push(
+			new Hanabi( this.x,this.y,this.col,vx,vy,1,1,200) 
+		);
+	}
       //火花外側入力
-			let col=rand(0,3);
-			for(let i=0;i<100;i++)
-			{
-				let r=rand(0,360);
-				let s=rand(300,400);
-				let vx=Math.cos(r*Math.PI/180)*s;
-				let vy=Math.sin(r*Math.PI/180)*s;
-				hanabi.push(
-					new Hanabi( this.x,this.y,col,vx,vy,1,1,200) 
-				);
-			}
+	let col=rand(0,3);
+	for(let i=0;i<100;i++)
+	{
+		let r=rand(0,360);
+		let s=rand(300,400);
+		let vx=Math.cos(r*Math.PI/180)*s;
+		let vy=Math.sin(r*Math.PI/180)*s;
+		hanabi.push(
+			new Hanabi( this.x,this.y,col,vx,vy,1,1,200) 
+		);
+	}
     }
     //火花
 		if(this.tp==1)
