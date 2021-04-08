@@ -98,21 +98,21 @@ class Hanabi{
 	}
     }
     //火花
-		if(this.tp==1)
+	if(this.tp==1)
+	{
+		this.hp--;
+		if(this.hp<100)
 		{
-			this.hp--;
-			if(this.hp<100)
-			{
-				if(this.sp)this.sp--;
-			}
-			if(this.hp==0)this.kill=true;
+			if(this.sp)this.sp--;
 		}
+		if(this.hp==0)this.kill=true;
+	}
   }
   
   draw(){
     //花火にちらつきを出す
     if(this.tp>0 && rand(0,100)<80 )return;
-		if(this.tp==0 && rand(0,100)<20 )return;
+　　if(this.tp==0 && rand(0,100)<20 )return;
     
     if(this.kill)return;
     
@@ -121,21 +121,19 @@ class Hanabi{
      con.globalAlpha=this.hp/50;
     }
     con.globalAlpha = 1.0;
-		let col=this.col;
-		if(this.tp==0)col=0;
-    console.log(col)
-		con.fillStyle=fwcol[col];
+　　let col=this.col;
+　　if(this.tp==0)col=0;
+　　con.fillStyle=fwcol[col];
     con.fillRect(this.x>>8,this.y>>8,2,2);
     
     //火花の火一つ一つをぼやけさせる
     //アンチエイリアスみたいな感じ
     con.globalAlpha=0.5;
-		con.fillRect((this.x>>8)-1,(this.y>>8),4,2);
-		con.fillRect((this.x>>8),(this.y>>8)-1,2,4);
+　　con.fillRect((this.x>>8)-1,(this.y>>8),4,2);
+　　con.fillRect((this.x>>8),(this.y>>8)-1,2,4);
     zanzo.push(
       new Zanzo(this.x,this.y,col)
     );
-
   }
 }
 
