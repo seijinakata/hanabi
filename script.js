@@ -116,7 +116,7 @@ class Hanabi{
     
     if(this.kill)return;
     
-    //すこしずづ消えていくようにする
+    //すこしずつ消えていくようにする
     if(this.hp<50){
      con.globalAlpha=this.hp/50;
     }
